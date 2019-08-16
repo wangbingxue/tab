@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" name="viewport">
+    <title>表格</title>
+    <link rel="stylesheet" href="../plugins/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../plugins/adminLTE/css/AdminLTE.css">
+    <link rel="stylesheet"  href="../plugins/adminLTE/css/skins/_all-skins.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../plugins/jQuery/jquery-2.2.3.min.js"></script>
+    <script src="../plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../plugins/angularjs/angular.min.js"></script>
+
+</head>
+<body>
+<div class="box-body">
+    <div class="table-box">
+        <table id="dataList" class="table table-bordered  table-hover dataTable">
+            <caption  style="text-align:center; font-size:20px;">表格</caption>
+            <thead>
+            <tr>
+                <th class="sorting">字段名</th>
+                <th class="sorting">中文名</th>
+                <th class="sorting">类型</th>
+                <!--<th class="sorting">选中</th>-->
+                <th class="sorting">查询条件</th>
+                <th class="sorting">字段名</th>
+                <th class="sorting">类型</th>
+                <th class="sorting">中文名</th>
+                <th class="text-center">英文名</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="entity in list" id="a">
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <!--<th class="" style="padding-right: 0px"><input id="selall" type="checkbox" class="icheckbox_square-blue"  onclick="csan()"></th>-->
+                <td><input type="text" name="input1" id="1"></td>
+                <td><input type="text" name="input1"></td>
+                <td><input type="text" name="input1"></td>
+                <td><input type="text" name="input1"></td>
+                <td><input type="text" name="input1"></td>
+            </tr>
+            </tbody>
+        </table>
+        <div class="pull-right">
+            <form class="form-group form-inline">
+                <div class="btn-group">
+                    <button onclick="fun()" type="button" class="btn btn-default" title="新增">
+                        <i class="fa fa-file-o"></i> 新增
+                    </button>
+                    <button type="button" class="btn btn-default" title="刷新">
+                        <i class="fa fa-refresh"></i> 保存
+                    </button>
+                    <button type="button" class="btn btn-default" title="删除">
+                        <i class="fa fa-trash-o"></i> 取消
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script>
+ //实现新增一行功能
+//        var i = 1;
+//        $(".td").each(function(){
+//            $(this).html(i++);
+//        });
+        function fun(){
+            var $td = $("#a").clone();       //增加一行,克隆第一个对象
+            $(".table").append($td);
+//            var i = 1;
+//            $(".td").each(function(){       //增加一行后重新更新序号1,2,3......
+//                $(this).html(i++);
+//            })
+            $("table tr:last").find(":input").val('');   //将尾行元素克隆来的保存的值清空
+        }
+//实现选中后可编辑功能
+
+// function csan(){
+//     var id2=document.getElementById("selall");
+//   alert(id2.checked);
+//
+//   if(id2.checked){
+//       $("input[name='input1']").attr("disabled",false);
+//   }
+//       document.getElementsByName("input[name='input']").attr("disabled",true);
+//    else{
+//         $("input[name='input1']").attr("disabled",true);
+//         document.getElementsByName("input[name='input']").attr("disabled",false);
+//    }
+// }
+  </script>
+</div>
+</body>
+</html>
